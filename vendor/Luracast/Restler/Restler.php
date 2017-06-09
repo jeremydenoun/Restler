@@ -529,7 +529,7 @@ class Restler extends EventDispatcher
             if ($version && $version <= $this->apiVersion) {
                 $this->requestedApiVersion = $version;
                 $path = explode('/', $path, 2);
-                $path = $path[1];
+                $path = isset($path[1]) ? $path[1] : "";
             }
         } else {
             $this->requestedApiVersion = $this->apiMinimumVersion;
